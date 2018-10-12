@@ -5,7 +5,9 @@ import {catchError, retry} from 'rxjs/operators';
 import {Observable, throwError} from 'rxjs';
 import {Challenge} from './challenge';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ChallengeListService {
   constructor(private http: HttpClient) {}
 
