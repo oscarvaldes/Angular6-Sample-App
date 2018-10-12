@@ -1,0 +1,12 @@
+{
+  "/fortnite": {
+    "target": "https://api.fortnitetracker.com/v1",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/fortnite": ""
+    }
+  }
+}
+

@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
-    "build": "ng build",
+    "start": "ng serve --proxy-config proxy.conf.json --open",
+    "build": "ng build --prod --base-href https://oscarvaldes.github.io/Angular6-Sample-App/",
+    "deploy": "ngh",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
