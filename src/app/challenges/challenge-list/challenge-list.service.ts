@@ -3,7 +3,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import {catchError, retry} from 'rxjs/operators';
 import {Observable, throwError} from 'rxjs';
-import {Challenge} from './challenge';
+import {IChallenge} from '../challenge';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +23,8 @@ export class ChallengeListService {
       'An error occurred.');
   }
 
-    getChallenges(): Observable<Challenge[]> {
-        return this.http.get<Challenge[]>(environment.challengeUrl, {
+    getChallenges(): Observable<IChallenge> {
+        return this.http.get<IChallenge>(environment.challengeUrl, {
         }).pipe(
           retry(2),
           catchError(ChallengeListService.handleError)
