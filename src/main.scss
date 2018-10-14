@@ -27,8 +27,6 @@
 }
 
 header.masthead {
-  //padding-top: 10rem;
-  //padding-bottom: calc(10rem - 56px);
   background: $purple url('/src/assets/fortnite.jpg') center center;
   @include background-cover;
   hr {
