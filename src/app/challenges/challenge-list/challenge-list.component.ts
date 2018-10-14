@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChallengeListService } from './challenge-list.service';
-import {IChallenge} from '../challenge';
+import {Challenge, IChallenge} from '../challenge';
 
 @Component({
   selector: 'app-challenge-list',
@@ -8,7 +8,8 @@ import {IChallenge} from '../challenge';
   styleUrls: ['./challenge-list.component.css']
 })
 export class ChallengeListComponent implements OnInit {
-  challenges: IChallenge = null;
+  iChallenges: IChallenge = null;
+  challenges: Challenge[] = [];
   errorMessage: string;
   showImages = true;
 
@@ -18,8 +19,12 @@ export class ChallengeListComponent implements OnInit {
 
   ngOnInit() {
     this.challengeService.getChallenges().subscribe(
-      challenge => { this.challenges = challenge;
-      console.log(this.challenges.items);
+      challenge => { this.iChallenges = challenge;
+      // console.log(this.challenges.items);
+      for (const item of this.iChallenges.items) {
+        console.log(item.metadata[1].value);
+        // this.challenges.
+      }
       },
       error => {this.errorMessage = <any>error;
       }
