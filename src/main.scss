@@ -27,7 +27,7 @@
 }
 
 header.masthead {
-  background: $purple url('/src/assets/fortnite.jpg') center center;
+  background: $purple url('/src/assets/fortnite.jpg') center center; opacity: .75;
   @include background-cover;
   hr {
     margin-top: 30px;
