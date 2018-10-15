@@ -11,7 +11,6 @@ export class ChallengeListComponent implements OnInit {
   iChallenges: IChallenge = null;
   challenges: Challenge[] = [];
   errorMessage: string;
-  showImages = true;
 
   constructor(private challengeService: ChallengeListService) {
 
@@ -20,10 +19,8 @@ export class ChallengeListComponent implements OnInit {
   ngOnInit() {
     this.challengeService.getChallenges().subscribe(
       challenge => { this.iChallenges = challenge;
-      // console.log(this.challenges.items);
       for (const item of this.iChallenges.items) {
-        console.log(item.metadata[1].value);
-        // this.challenges.
+        this.challenges.push({name: item.metadata[1].value, imageURl: item.metadata[4].value, reward: +item.metadata[5].value});
       }
       },
       error => {this.errorMessage = <any>error;
