@@ -27,22 +27,22 @@ describe('AppComponent', () => {
     router.initialNavigation();
   }));
 
-  fit('should create the app', () => {
+  it('should create the app', () => {
     fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  fit(`should have as title 'Everything Fortnite'`, () => {
+  it(`should have as title 'Everything Fortnite'`, () => {
     fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Everything Fortnite');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title in a h2 tag', () => {
     fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Angular6-Sample-App!');
+    expect(compiled.querySelector('h2').textContent).toContain('Everything Fortnite');
   });
 });
