@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json --open",
-    "build": "ng build --prod --base-href https://oscarvaldes.github.io/Angular6-Sample-App/",
+    "build": "ng build --prod",
     "deploy": "ngh",
     "test": "ng test",
     "lint": "ng lint",
