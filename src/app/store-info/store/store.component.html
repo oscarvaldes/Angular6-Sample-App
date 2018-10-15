@@ -1,3 +1,20 @@
-<p>
-  store works!
-</p>
+<div class="table-responsive">
+  <table class="table table-dark" *ngIf="iStore && iStore.length > 0">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>vBucks</th>
+      <th>Rarity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let store of iStore">
+      <td>{{store.name}}</td>
+      <td><img src="{{store.imageUrl}}" width="40px" height="40px"></td>
+      <td>{{store.vBucks}}</td>
+      <td>{{store.rarity}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
